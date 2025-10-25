@@ -1,20 +1,17 @@
+#include <stdio.h>
 #include "main.h"
 
-/**
- * main - check the code.
- *
- * Return: Always 0.
- */
 int main(void)
 {
-    int r;
+	char c;
 
-    r = _islower('H');
-    _putchar(r + '0');
-    r = _islower('o');
-    _putchar(r + '0');
-    r = _islower(108);
-    _putchar(r + '0');
-    _putchar('\n');
-    return (0);
+	for (c = 'A'; c <= 'z'; c++)
+	{
+		if (_islower(c))
+			printf("%c is lowercase\n", c);
+		else
+			printf("%c is not lowercase\n", c);
+	}
+
+	return (0);
 }
