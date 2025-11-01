@@ -1,12 +1,15 @@
 #include <stdio.h>
 
 /*
+* - int main - Entry point
+*	- Calls the FizzBuzz function.
 * FizzBuzz function prints numbers from 1 to n with the following rules:
 * - For multiples of 3, print "Fizz" instead of the number.
 * - For multiples of 5, print "Buzz" instead of the number.
 * - For multiples of both 3 and 5, print "FizzBuzz" instead of
 *   the number.
 */
+
 
 int main(void)
 {
