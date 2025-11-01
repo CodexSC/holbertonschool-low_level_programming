@@ -15,14 +15,17 @@ void fizzBuzz(int n)
 	for (i = 1; i <= n; i++)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
-			printf("FizzBuzz\n");
+			printf("FizzBuzz");
 		else if (i % 3 == 0)
-			printf("Fizz\n");
+			printf("Fizz");
 		else if (i % 5 == 0)
-			printf("Buzz\n");
+			printf("Buzz");
 		else
-			printf("%d\n", i);
+			printf("%d", i);
+		if (i < n)
+			printf(" ");
 	}
+	printf("\n");
 }
 
 /**
@@ -32,6 +35,6 @@ void fizzBuzz(int n)
  */
 int main(void)
 {
-	fizzBuzz(15);
+	fizzBuzz(100);
 	return (0);
 }
