@@ -1,8 +1,9 @@
 #include "main.h"
 #include <stdio.h>
+
 /**
- * _strlen - returns the length of a string
- * @s: string to evaluate
+ * print_rev - prints a string in reverse
+ * @s: string to be printed
  *
  * Return: length of the string
  */
