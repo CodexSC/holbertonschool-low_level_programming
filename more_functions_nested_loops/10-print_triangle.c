@@ -1,15 +1,13 @@
 #include "main.h"
 #include <stdio.h>
 
-/*
-* print_triangle - prints a triangle of a given size
-* @size: size of the triangle
-* Return: void
-*/
-
 void print_triangle(int size)
 
-/* Function to print a triangle of given size */
+/**
+ * void print_triangle - prints a triangle of size 'size' using '#'
+ * @size: size of the triangle
+ * Return: void
+ */
 
 {
 	int i, j;
