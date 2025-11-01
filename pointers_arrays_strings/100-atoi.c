@@ -22,6 +22,8 @@ int _atoi(char *s)
 		else if (s[i] >= '0' && s[i] <= '9')
 		{
 			digit = s[i] - '0';
+			if (result > 214748364 || (result == 214748364 && digit > 7))
+				break;
 			result = result * 10 + digit;
 		}
 		else if (result > 0)
