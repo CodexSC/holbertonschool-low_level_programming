@@ -6,9 +6,10 @@
 * @size: size of the triangle
 */
 
-
-
 void print_triangle(int size)
+
+/* Function to print a triangle of given size */
+
 {
 	int i, j;
 
