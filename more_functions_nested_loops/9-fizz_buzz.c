@@ -1,36 +1,37 @@
 #include <stdio.h>
 
-/*
-* FizzBuzz function prints numbers from 1 to n with the following rules:
-* - For multiples of 3, print "Fizz" instead of the number.
-* - For multiples of 5, print "Buzz" instead of the number.
-* - For multiples of both 3 and 5, print "FizzBuzz" instead of
-*   the number.
-*/
-
-
-int main(void)
+/**
+ * fizzBuzz - prints numbers from 1 to n with FizzBuzz rules
+ * @n: the upper limit
+ *
+ * For multiples of 3, print "Fizz" instead of the number.
+ * For multiples of 5, print "Buzz" instead of the number.
+ * For multiples of both 3 and 5, print "FizzBuzz" instead of the number.
+ */
+void fizzBuzz(int n)
 {
-	int n;
+	int i;
 
-	for (n = 1; n <= 100; n++)
+	for (i = 1; i <= n; i++)
 	{
-		if (n % 3 == 0 && n % 5 == 0)
-			printf("FizzBuzz");
-		else if (n % 3 == 0)
-			printf("Fizz");
-		else if (n % 5 == 0)
-			printf("Buzz");
+		if (i % 3 == 0 && i % 5 == 0)
+			printf("FizzBuzz\n");
+		else if (i % 3 == 0)
+			printf("Fizz\n");
+		else if (i % 5 == 0)
+			printf("Buzz\n");
 		else
-			printf("%d", n);
-
-		if (n != 100)
-			printf(" ");
+			printf("%d\n", i);
 	}
-	printf("\n");
-	return (0);
 }
+
 /**
  * main - Entry point
- * Return: Always 0 (Success)
+ *
+ * Return: Always 0
  */
+int main(void)
+{
+	fizzBuzz(15);
+	return (0);
+}
