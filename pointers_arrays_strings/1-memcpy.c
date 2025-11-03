@@ -4,16 +4,19 @@
 /**
  * print_to_98 - prints all natural numbers from n to 98
  * @n: starting number
+ * Return: pointer to dest
+ * Description: copies n bytes from memory area src to memory area dest
  */
 
- char *_memcpy(char *dest, char *src, unsigned int n);
+char *_memcpy(char *dest, char *src, unsigned int n)
 
- unsigned int n;
- {
-    for (n = 0; n != '\0'; n++);
-    {
-        dest[n] = src[n];
-    }
+{
+	unsigned int i;
 
- return (dest);
+	for (i = 0; i < n; i++)
+	{
+		dest[i] = src[i];
+	}
+
+return (dest);
 }
