@@ -1,23 +1,21 @@
 #include "main.h"
 #include <stdio.h>
+
 /**
- * _strlen - returns the length of a string
- * @s: string to evaluate
+ * _strchr - Locates a character in a string
+ * @s: Pointer to the string to search
+ * @c: Character to locate
  *
- * Return: length of the string
+ * Return: Pointer to the first occurrence of the character,
+ *         or NULL if not found
  */
-
-void print_rev(char *s)
+char *_strchr(char *s, char c)
 {
-	int len = 0;
-
-	while (s[len] != '\0')
-		len++;
-
-	while (len > 0)
+	while (*s)
 	{
-		len--;
-		_putchar(s[len]);
+		if (*s == c)
+			return (s);
+		s++;
 	}
-	_putchar('\n');
+	return (*s == c ? s : NULL);
 }
