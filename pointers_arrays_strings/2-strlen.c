@@ -1,23 +1,17 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
- * _strlen - returns the length of a string
- * @s: string to evaluate
+ * _strlen - Returns the length of a string
+ * @s: Pointer to the string
  *
- * Return: length of the string
+ * Return: The length of the string
  */
-
-void print_rev(char *s)
+int _strlen(char *s)
 {
-	int len = 0;
+	int length = 0;
 
-	while (s[len] != '\0')
-		len++;
+	while (s[length] != '\0')
+		length++;
 
-	while (len > 0)
-	{
-		len--;
-		_putchar(s[len]);
-	}
-	_putchar('\n');
+	return (length);
 }
