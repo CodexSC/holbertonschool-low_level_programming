@@ -1,67 +1,81 @@
+#include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * is_digit_string - checks if a string contains only digits
+ * @s: string to check
+ * Return: 1 if all digits, 0 otherwise
  */
-int _putchar(char c)
+int is_digit_string(char *s)
 {
-	return (putchar(c));
+    int i = 0;
+
+    if (!s || !s[0])
+        return 0;
+
+    while (s[i])
+    {
+        if (s[i] < '0' || s[i] > '9')
+            return 0;
+        i++;
+    }
+    return 1;
 }
 
 /**
- * is_valid_number - checks if string contains only digits
- * @str: string to check
- *
- * Return: 1 if valid, 0 otherwise
+ * print_number - prints an integer using _putchar
+ * @n: number to print
  */
-int is_valid_number(char *str)
+void print_number(int n)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (!isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
+    if (n / 10)
+        print_number(n / 10);
+    _putchar((n % 10) + '0');
 }
 
 /**
- * main - adds positive numbers passed as arguments
- * @argc: argument count
+ * main - adds positive numbers from command-line arguments
+ * @argc: number of arguments
  * @argv: argument vector
- *
  * Return: 0 on success, 1 on error
  */
 int main(int argc, char **argv)
 {
-	int sum;
-	int i;
-	int num;
+    int i, sum = 0;
+    int num;
+    int k; /* declare all variables at top */
 
-	sum = 0;
-	i = 1;
+    if (argc == 1)
+    {
+        _putchar('0');
+        _putchar('\n');
+        return 0;
+    }
 
-	while (i < argc)
-	{
-		if (!is_valid_number(argv[i]))
-		{
-			printf("Error\n");
-			return (1);
-		}
-		num = atoi(argv[i]);
-		sum += num;
-		i++;
-	}
+    for (i = 1; i < argc; i++)
+    {
+        if (!is_digit_string(argv[i]))
+        {
+            char *error = "Error\n";
+            int j;  /* declare at top of block */
+            for (j = 0; error[j]; j++)
+                _putchar(error[j]);
+            return 1;
+        }
 
-	printf("%d\n", sum);
-	return (0);
+        num = 0;
+        k = 0;
+        while (argv[i][k])
+        {
+            num = num * 10 + (argv[i][k] - '0');
+            k++;
+        }
+
+        sum += num;
+    }
+
+    print_number(sum);
+    _putchar('\n');
+
+    return 0;
 }
