@@ -1,10 +1,8 @@
-#include "main.h"
-#include <stdio.h>
-
-int main(int argc, char **arcgv)
+int main(int argc, char **argv)
 {
-    (void)argv
-    _putchar((argc -1) + '0');
+    (void)argv; /* suppress unused parameter warning */
+
+    _putchar((argc - 1) + '0');
     _putchar('\n');
-    return (0);
+    return 0;
 }
