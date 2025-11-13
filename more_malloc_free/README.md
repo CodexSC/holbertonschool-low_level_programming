@@ -1,4 +1,4 @@
-# 🔮 CYBERPUNK C - DYNAMIC MEMORY ALLOCATION
+# 🔮 C - DYNAMIC MEMORY ALLOCATION
 
 ```
     ╔═══════════════════════════════════════════════════════════════╗
@@ -21,8 +21,8 @@
     ║                    ███░░░███                                  ║
     ║                      ███                                      ║
     ║                                                               ║
-    ║          ⚡ MEMORY ALLOCATION SYSTEM ⚡                       ║
-    ║     DYNAMIC HEAP MANAGEMENT & ERROR PROTOCOL                ║
+    ║          ⚡ MEMORY ALLOCATION SYSTEM ⚡                         ║
+    ║     DYNAMIC HEAP MANAGEMENT & ERROR PROTOCOL                  ║
     ║                                                               ║
     ╚═══════════════════════════════════════════════════════════════╝
 ```
@@ -169,21 +169,6 @@ exit(98)    return(ptr)
   ↓            ↓
 Program      Valid Pointer
 Terminates    to Caller
-```
-
----
-
-## 🎮 CYBERPUNK AESTHETICS
-
-```
-████████████████████████████████████
-█ C-LANGUAGE DYNAMIC ALLOCATION     █
-█ MEMORY MANAGEMENT SYSTEM v1.0     █
-█                                   █
-█ Status: OPERATIONAL               █
-█ Compilation: gcc -Wall -Werror    █
-█ Protocol: malloc_checked(98)      █
-████████████████████████████████████
 ```
 
 ---
