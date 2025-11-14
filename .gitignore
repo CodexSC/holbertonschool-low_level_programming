@@ -29,3 +29,4 @@ more_malloc_free/2-calloc.c
 more_malloc_free/3-main.c
 structures_typedef/0-main.c
 structures_typedef/1-main.c
+structures_typedef/4-main.c
