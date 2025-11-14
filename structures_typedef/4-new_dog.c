@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <string.h>
 #include "dog.h"
 
 /**
@@ -24,14 +23,26 @@ dog_t *new_dog(char *name, float age, char *owner)
 	d->name = malloc(i + 1);
 	if (d->name == NULL)
 		return (NULL);
-	strcpy(d->name, name);
+	i = 0;
+	while (name[i])
+	{
+		d->name[i] = name[i];
+		i++;
+	}
+	d->name[i] = '\0';
 	i = 0;
 	while (owner[i])
 		i++;
 	d->owner = malloc(i + 1);
 	if (d->owner == NULL)
 		return (NULL);
-	strcpy(d->owner, owner);
+	i = 0;
+	while (owner[i])
+	{
+		d->owner[i] = owner[i];
+		i++;
+	}
+	d->owner[i] = '\0';
 	d->age = age;
 	return (d);
 }
