@@ -14,10 +14,6 @@
  *
  * Return: Nothing.
  */
-<<<<<<< HEAD
-
-=======
->>>>>>> 08f2db8585960053aeab2c3415e6e5f4e460d067
 void print_name(char *name, void (*f)(char *))
 {
 	/* Check if name or function pointer is NULL; if so, exit safely */
