@@ -24,58 +24,25 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				print_c(args);
+				printf("%c", va_arg(args, int));
 				break;
 			case 'i':
-				print_i(args);
+				printf("%d", va_arg(args, int));
 				break;
 			case 'f':
-				print_f(args);
+				printf("%f", va_arg(args, double));
 				break;
 			case 's':
 				print_s(args);
 				break;
 		}
-		if (format[i + 1])
-			printf(", ");
 		i++;
+		if (format[i] && (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's'))
+			printf(", ");
 	}
 
 	va_end(args);
 	printf("\n");
-}
-
-/**
- * print_c - Prints a char
- * @args: va_list
- *
- * Return: void
- */
-void print_c(va_list args)
-{
-	printf("%c", va_arg(args, int));
-}
-
-/**
- * print_i - Prints an int
- * @args: va_list
- *
- * Return: void
- */
-void print_i(va_list args)
-{
-	printf("%d", va_arg(args, int));
-}
-
-/**
- * print_f - Prints a float
- * @args: va_list
- *
- * Return: void
- */
-void print_f(va_list args)
-{
-	printf("%f", va_arg(args, double));
 }
 
 /**
