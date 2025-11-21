@@ -25,30 +25,30 @@ void print_all(const char * const format, ...)
 	{
 		switch (format[i])
 		{
-			case 'c':
-				if (printed)
-					printf(", ");
-				printf("%c", va_arg(args, int));
-				printed = 1;
-				break;
-			case 'i':
-				if (printed)
-					printf(", ");
-				printf("%d", va_arg(args, int));
-				printed = 1;
-				break;
-			case 'f':
-				if (printed)
-					printf(", ");
-				printf("%f", va_arg(args, double));
-				printed = 1;
-				break;
-			case 's':
-				if (printed)
-					printf(", ");
-				print_s(args);
-				printed = 1;
-				break;
+		case 'c':
+			if (printed)
+				printf(", ");
+			printf("%c", va_arg(args, int));
+			printed = 1;
+			break;
+		case 'i':
+			if (printed)
+				printf(", ");
+			printf("%d", va_arg(args, int));
+			printed = 1;
+			break;
+		case 'f':
+			if (printed)
+				printf(", ");
+			printf("%f", va_arg(args, double));
+			printed = 1;
+			break;
+		case 's':
+			if (printed)
+				printf(", ");
+			print_s(args);
+			printed = 1;
+			break;
 		}
 		i++;
 	}
