@@ -25,20 +25,26 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				printf("%c", va_arg(args, int));
+				if (format[i + 1] && (format[i + 1] == 'c' || format[i + 1] == 'i' || format[i + 1] == 'f' || format[i + 1] == 's'))
+					printf(", ");
 				break;
 			case 'i':
 				printf("%d", va_arg(args, int));
+				if (format[i + 1] && (format[i + 1] == 'c' || format[i + 1] == 'i' || format[i + 1] == 'f' || format[i + 1] == 's'))
+					printf(", ");
 				break;
 			case 'f':
 				printf("%f", va_arg(args, double));
+				if (format[i + 1] && (format[i + 1] == 'c' || format[i + 1] == 'i' || format[i + 1] == 'f' || format[i + 1] == 's'))
+					printf(", ");
 				break;
 			case 's':
 				print_s(args);
+				if (format[i + 1] && (format[i + 1] == 'c' || format[i + 1] == 'i' || format[i + 1] == 'f' || format[i + 1] == 's'))
+					printf(", ");
 				break;
 		}
 		i++;
-		if (format[i] && (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's'))
-			printf(", ");
 	}
 
 	va_end(args);
