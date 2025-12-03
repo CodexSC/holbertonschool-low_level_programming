@@ -2,7 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/holbertonschool-low_level_programming" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/holbertonschool-low_level_programming/more_functions_nested_loops" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/holbertonschool-printf" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/more_functions_nested_loops" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pointers_arrays_strings" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/singly_linked_lists" vcs="Git" />
   </component>
 </project>
