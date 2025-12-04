@@ -11,39 +11,20 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new_node;
-	list_t *current;
+	list_t *new_node, *current;
 	unsigned int i;
 
-	/* Allocate new node */
 	new_node = malloc(sizeof(list_t));
 	if (new_node == NULL)
 		return (NULL);
 
-	/* Handle NULL str case */
+	/* str cannot be NULL — required by project */
 	if (str == NULL)
 	{
-		new_node->str = NULL;
-		new_node->len = 0;
-		new_node->next = NULL;
-
-		/* If list empty -> becomes head */
-		if (*head == NULL)
-		{
-			*head = new_node;
-			return (new_node);
-		}
-
-		/* Else append at end */
-		current = *head;
-		while (current->next != NULL)
-			current = current->next;
-
-		current->next = new_node;
-		return (new_node);
+		free(new_node);
+		return (NULL);
 	}
 
-	/* Handle non-NULL str case */
 	new_node->str = strdup(str);
 	if (new_node->str == NULL)
 	{
@@ -51,20 +32,17 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	/* Manual strlen because strlen is forbidden */
-	for (i = 0; new_node->str[i]; i++)
+	for (i = 0; str[i]; i++)
 		;
 	new_node->len = i;
 	new_node->next = NULL;
 
-	/* If list empty -> new node becomes head */
 	if (*head == NULL)
 	{
 		*head = new_node;
 		return (new_node);
 	}
 
-	/* Otherwise append at end */
 	current = *head;
 	while (current->next != NULL)
 		current = current->next;
