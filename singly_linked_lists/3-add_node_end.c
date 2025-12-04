@@ -1,57 +1,74 @@
 #include "lists.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
- * add_node_end - adds a new node at the end of a list_t list
- * @head: pointer to the pointer to the head of the list
- * @str: string to duplicate into the new node
+ * add_node_end - Adds a new node at the end of a singly linked list
+ * @head: Double pointer to the head of the list
+ * @str: String to be duplicated and added to the new node
  *
- * Return: address of the new node, or NULL if it failed
+ * Return: The address of the new node, or NULL if it failed
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new_node, *temp;
+	list_t *new_node;
+	list_t *current;
 	unsigned int i;
 
-	if (str == NULL)
-		return (NULL);
-
+	/* Allocate new node */
 	new_node = malloc(sizeof(list_t));
-	if (!new_node)
+	if (new_node == NULL)
 		return (NULL);
 
-	/* compute length manually */
-	for (i = 0; str[i]; i++)
-		;
+	/* Handle NULL str case */
+	if (str == NULL)
+	{
+		new_node->str = NULL;
+		new_node->len = 0;
+		new_node->next = NULL;
 
-	/* allocate memory for string */
-	new_node->str = malloc(i + 1);
-	if (!new_node->str)
+		/* If list empty -> becomes head */
+		if (*head == NULL)
+		{
+			*head = new_node;
+			return (new_node);
+		}
+
+		/* Else append at end */
+		current = *head;
+		while (current->next != NULL)
+			current = current->next;
+
+		current->next = new_node;
+		return (new_node);
+	}
+
+	/* Handle non-NULL str case */
+	new_node->str = strdup(str);
+	if (new_node->str == NULL)
 	{
 		free(new_node);
 		return (NULL);
 	}
 
-	/* copy string manually */
-	for (i = 0; str[i]; i++)
-		new_node->str[i] = str[i];
-	new_node->str[i] = '\0';
-
+	/* Manual strlen because strlen is forbidden */
+	for (i = 0; new_node->str[i]; i++)
+		;
 	new_node->len = i;
 	new_node->next = NULL;
 
-	/* if list is empty */
+	/* If list empty -> new node becomes head */
 	if (*head == NULL)
 	{
 		*head = new_node;
 		return (new_node);
 	}
 
-	/* walk to last node */
-	temp = *head;
-	while (temp->next != NULL)
-		temp = temp->next;
+	/* Otherwise append at end */
+	current = *head;
+	while (current->next != NULL)
+		current = current->next;
 
-	temp->next = new_node;
+	current->next = new_node;
 	return (new_node);
 }
